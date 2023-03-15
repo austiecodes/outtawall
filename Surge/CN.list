@@ -1,0 +1,73 @@
+# China Area Network
+DOMAIN-SUFFIX,flyert.com
+DOMAIN-SUFFIX,gandi.net
+DOMAIN-SUFFIX,snapdrop.net
+DOMAIN,download.jetbrains.com
+DOMAIN,origin-a.akamaihd.net // Origin Download
+
+
+# ---(Microsoft)---
+# > Outlook
+DOMAIN,outlook.office365.com
+DOMAIN,smtp-mail.outlook.com
+DOMAIN,smtp.office365.com
+
+# > Windows Server Update Services
+DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com
+DOMAIN-SUFFIX,update.microsoft.com
+DOMAIN-SUFFIX,windowsupdate.com
+DOMAIN-SUFFIX,windowsupdate.microsoft.com
+DOMAIN,download.microsoft.com
+DOMAIN,wustat.windows.com
+DOMAIN,ntservicepack.microsoft.com
+
+
+# ------
+# > Steam China & CDN
+DOMAIN-SUFFIX,cm.steampowered.com // Steam Connect Manager Servers
+DOMAIN,api.steampowered.com
+DOMAIN-SUFFIX,steamcontent.com
+DOMAIN-SUFFIX,steamchina.com
+DOMAIN,csgo.wmsj.cn
+DOMAIN,dota2.wmsj.cn
+DOMAIN,wmsjsteam.com
+DOMAIN,dl.steam.clngaa.com
+DOMAIN,dl.steam.ksyna.com
+DOMAIN,st.dl.bscstorage.net
+DOMAIN,st.dl.eccdnx.com
+DOMAIN,st.dl.pinyuncloud.com
+DOMAIN,steampipe.steamcontent.tnkjmec.com
+DOMAIN,steampowered.com.8686c.com
+DOMAIN,steamstatic.com.8686c.com
+DOMAIN,dl.steam.clngaa.com
+DOMAIN,dl.steam.ksyna.com
+DOMAIN,dl.steam.*
+
+# > Tencent
+IP-CIDR,182.254.116.0/24,no-resolve
+IP-CIDR,203.205.238.0/23,no-resolve
+IP-CIDR,203.205.254.0/23,no-resolve
+# > IP Query
+DOMAIN,ip.istatmenus.app
+DOMAIN,sms.imagetasks.com
+# > Speed Test
+DOMAIN-SUFFIX,netspeedtestmaster.com
+DOMAIN,speedtest.macpaw.com
+
+# Others
+DOMAIN-SUFFIX,jianguoyun.com
+#longbridge
+DOMAIN-SUFFIX,lbkrs.com
+DOMAIN-SUFFIX,api.longbridge.global
+#netease
+DOMAIN-SUFFIX,163.com
+DOMAIN-SUFFIX,126.com
+DOMAIN-SUFFIX,netease.com
+#ddnsto
+DOMAIN-SUFFIX,ddnsto.com
+DOMAIN-SUFFIX,kooldns.cn
+DOMAIN-SUFFIX,tocmcc.cn
+
+
+# edu
+DOMAIN-SUFFIX,edu.cn

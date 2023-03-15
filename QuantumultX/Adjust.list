@@ -1,0 +1,11 @@
+# > AI
+# openai
+DOMAIN-SUFFIX,chat.openai.com,Proxy
+DOMAIN-SUFFIX,openai.com,Proxy
+DOMAIN-SUFFIX,bing.com,Proxy
+
+# deepmind
+DOMAIN-SUFFIX,deepmind.com,Proxy
+
+# Anthropic
+DOMAIN-SUFFIX,anthropic.com,Proxy

@@ -1,0 +1,18 @@
+# > Netflix
+USER-AGENT,Argo*,Netflix
+DOMAIN-SUFFIX,netflix.com,Netflix
+DOMAIN-SUFFIX,netflix.net,Netflix
+DOMAIN-SUFFIX,nflxext.com,Netflix
+DOMAIN-SUFFIX,nflximg.com,Netflix
+DOMAIN-SUFFIX,nflximg.net,Netflix
+DOMAIN-SUFFIX,nflxso.net,Netflix
+DOMAIN-SUFFIX,nflxvideo.net,Netflix
+DOMAIN-KEYWORD,netflixdnstest,Netflix
+DOMAIN-KEYWORD,apiproxy-device-prod-nlb-,Netflix
+DOMAIN-KEYWORD,dualstack.apiproxy-,Netflix
+# GEOIP,NETFLIX,no-resolve,Netflix
+DOMAIN-KEYWORD,netflix,Netflix
+DOMAIN-KEYWORD,nflx,Netflix
+DOMAIN-KEYWORD,dualstack.apiproxy-,Netflix
+DOMAIN-KEYWORD,dualstack.ichnaea-web-,Netflix
+DOMAIN-SUFFIX,us-west-2.amazonaws.com,Netflix
