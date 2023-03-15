@@ -4,14 +4,11 @@ DOMAIN-SUFFIX,gandi.net
 DOMAIN-SUFFIX,snapdrop.net
 DOMAIN,download.jetbrains.com
 DOMAIN,origin-a.akamaihd.net // Origin Download
-
-
 # ---(Microsoft)---
 # > Outlook
 DOMAIN,outlook.office365.com
 DOMAIN,smtp-mail.outlook.com
 DOMAIN,smtp.office365.com
-
 # > Windows Server Update Services
 DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com
 DOMAIN-SUFFIX,update.microsoft.com
@@ -20,8 +17,6 @@ DOMAIN-SUFFIX,windowsupdate.microsoft.com
 DOMAIN,download.microsoft.com
 DOMAIN,wustat.windows.com
 DOMAIN,ntservicepack.microsoft.com
-
-
 # ------
 # > Steam China & CDN
 DOMAIN-SUFFIX,cm.steampowered.com // Steam Connect Manager Servers
@@ -42,7 +37,6 @@ DOMAIN,steamstatic.com.8686c.com
 DOMAIN,dl.steam.clngaa.com
 DOMAIN,dl.steam.ksyna.com
 DOMAIN,dl.steam.*
-
 # > Tencent
 IP-CIDR,182.254.116.0/24,no-resolve
 IP-CIDR,203.205.238.0/23,no-resolve
@@ -53,7 +47,6 @@ DOMAIN,sms.imagetasks.com
 # > Speed Test
 DOMAIN-SUFFIX,netspeedtestmaster.com
 DOMAIN,speedtest.macpaw.com
-
 # Others
 DOMAIN-SUFFIX,jianguoyun.com
 #longbridge
@@ -67,7 +60,5 @@ DOMAIN-SUFFIX,netease.com
 DOMAIN-SUFFIX,ddnsto.com
 DOMAIN-SUFFIX,kooldns.cn
 DOMAIN-SUFFIX,tocmcc.cn
-
-
 # edu
 DOMAIN-SUFFIX,edu.cn
