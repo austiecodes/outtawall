@@ -66,6 +66,12 @@ proxy-groups:
     type: select
     use:
       - 2.com
+  - name: AI-Tools
+    type: select
+    proxies:
+      - 1
+      - 2
+      - FallBack 
 
   - name: Netflix
     type: select
@@ -329,8 +335,12 @@ rules:
   - 'IP-CIDR,208.75.76.0/22,Netflix,no-resolve'
 
 # bing chatgpt
-  - DOMAIN-SUFFIX,bing.com,Proxy
-  - DOMAIN-SUFFIX,chat.openai.com,Proxy
+  - DOMAIN-SUFFIX,bing.com,AI-Tools
+  - DOMAIN-SUFFIX,skype.com,AI-Tools
+  - DOMAIN-SUFFIX,chat.openai.com,AI-Tools
+  - DOMAIN-SUFFIX,api.openai.com,AI-Tools
+  - DOMAIN-SUFFIX,openai.com,AI-Tools
+
 
 # Discord
   - DOMAIN-SUFFIX,discord.co,Discord
@@ -340,7 +350,6 @@ rules:
   - DOMAIN-SUFFIX,discordapp.com,Discord
   - DOMAIN-SUFFIX,discordapp.net,Discord
   - DOMAIN-SUFFIX,discordstatus.com,Discord
-
 
 # Basic
   - RULE-SET,applications,DIRECT

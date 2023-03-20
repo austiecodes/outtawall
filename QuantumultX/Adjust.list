@@ -1,8 +1,10 @@
 # > AI
 # openai
 DOMAIN-SUFFIX,chat.openai.com,Proxy
+DOMAIN,api.openai.com,Proxy
 DOMAIN-SUFFIX,openai.com,Proxy
 DOMAIN-SUFFIX,bing.com,Proxy
+DOMAIN-SUFFIX,skype.com,Proxy
 
 # deepmind
 DOMAIN-SUFFIX,deepmind.com,Proxy
