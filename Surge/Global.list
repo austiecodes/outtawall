@@ -222,6 +222,7 @@ DOMAIN-SUFFIX,zynamics.com
 DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,.blogspot.
 DOMAIN-SUFFIX,goog
+DOMAIN-SUFFIX,google.com
 
 # > Automattic
 DOMAIN-SUFFIX,gravatar.com

@@ -151,6 +151,13 @@ rule-providers:
     interval: 86400
   
 
+  google:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt"
+    path: ./ruleset/google.yaml
+    interval: 86400
+
   proxy:
     type: http
     behavior: domain
@@ -361,6 +368,7 @@ rules:
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
   - RULE-SET,telegramcidr,Proxy
+  - RULE-SET,google,Proxy
   - RULE-SET,proxy,Proxy
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
