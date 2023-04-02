@@ -229,6 +229,10 @@ rule-providers:
     interval: 86400
 
 rules:
+# Adjust
+  - DOMAIN-SUFFIX,yahoo.com,Proxy
+  - DOMAIN—SUFFIX,engaget.com,Proxy
+  
 # Steam and it's China CDN
   - DOMAIN-SUFFIX,steamcontent.com,DIRECT
   - DOMAIN-SUFFIX,steamchina.com,DIRECT
