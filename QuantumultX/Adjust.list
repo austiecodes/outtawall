@@ -11,3 +11,6 @@ DOMAIN-SUFFIX,deepmind.com,Proxy
 
 # Anthropic
 DOMAIN-SUFFIX,anthropic.com,Proxy
+
+# huggin facce
+huggingface.co,Proxy

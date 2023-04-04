@@ -345,7 +345,8 @@ rules:
   - 'IP-CIDR,207.45.72.0/22,Netflix,no-resolve'
   - 'IP-CIDR,208.75.76.0/22,Netflix,no-resolve'
 
-# bing chatgpt
+# AI-Tools
+  - DOMAIN—SUFFIX,hugginface.co,AI-Tools
   - DOMAIN-SUFFIX,bing.com,AI-Tools
   - DOMAIN-SUFFIX,skype.com,AI-Tools
   - DOMAIN-SUFFIX,chat.openai.com,AI-Tools
