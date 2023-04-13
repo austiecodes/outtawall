@@ -13,4 +13,4 @@ DOMAIN-SUFFIX,deepmind.com,AI
 DOMAIN-SUFFIX,anthropic.com,AI
 
 # Huggin Face
-huggingface.co,AI
+DOMAIN-SUFFIX,huggingface.co,AI
