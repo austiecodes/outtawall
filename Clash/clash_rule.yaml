@@ -352,6 +352,11 @@ rules:
   - DOMAIN-SUFFIX,chat.openai.com,AI-Tools
   - DOMAIN-SUFFIX,api.openai.com,AI-Tools
   - DOMAIN-SUFFIX,openai.com,AI-Tools
+  - DOMAIN-SUFFIX,deepmind.com,AI-Tools
+  - DOMAIN-SUFFIX,anthropic.com,AI-Tools
+
+
+
 
 
 # Discord

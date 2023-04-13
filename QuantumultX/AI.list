@@ -1,0 +1,16 @@
+# > AI
+# openai
+DOMAIN-SUFFIX,chat.openai.com,AI
+DOMAIN,api.openai.com,AI
+DOMAIN-SUFFIX,openai.com,AI
+DOMAIN-SUFFIX,bing.com,AI
+DOMAIN-SUFFIX,skype.com,AI
+
+# DeepMind
+DOMAIN-SUFFIX,deepmind.com,AI
+
+# Anthropic
+DOMAIN-SUFFIX,anthropic.com,AI
+
+# Huggin Face
+huggingface.co,AI
