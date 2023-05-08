@@ -446,3 +446,8 @@ DOMAIN-SUFFIX,thediplomat.com,Proxy
 DOMAIN-SUFFIX,themoviedb.org,Proxy
 DOMAIN-SUFFIX,thetvdb.com,Proxy
 DOMAIN-SUFFIX,time.com,Proxy
+
+
+
+# MusixMatch
+DOMIAN-SUFFIX,audio-ake.spotify.com.edgesuite.net,Proxy

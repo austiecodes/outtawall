@@ -476,3 +476,6 @@ DOMAIN-SUFFIX,thediplomat.com
 DOMAIN-SUFFIX,themoviedb.org
 DOMAIN-SUFFIX,thetvdb.com
 DOMAIN-SUFFIX,time.com
+
+# MusixMatch
+DOMIAN-SUFFIX,audio-ake.spotify.com.edgesuite.net

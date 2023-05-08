@@ -5,6 +5,9 @@ DOMAIN,api.openai.com,AI
 DOMAIN-SUFFIX,openai.com,AI
 DOMAIN-SUFFIX,bing.com,AI
 DOMAIN-SUFFIX,skype.com,AI
+DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net,AI
+DOMAIN-SUFFIX,openai0site.azureedge.net,AI
+DOMAIN-SUFFIX,openaicom.imgix.net,AI
 
 # DeepMind
 DOMAIN-SUFFIX,deepmind.com,AI
