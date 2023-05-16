@@ -19,7 +19,7 @@ DOMAIN,wustat.windows.com
 DOMAIN,ntservicepack.microsoft.com
 # ------
 # > Steam China & CDN
-DOMAIN-SUFFIX,cm.steampowered.com // Steam Connect Manager Servers
+# DOMAIN-SUFFIX,cm.steampowered.com // Steam Connect Manager Servers
 DOMAIN,api.steampowered.com
 DOMAIN-SUFFIX,steamcontent.com
 DOMAIN-SUFFIX,steamchina.com

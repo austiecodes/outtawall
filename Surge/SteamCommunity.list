@@ -16,5 +16,7 @@ DOMAIN,steamstorea.akamaihd.net
 DOMAIN,steamusercontenta.akamaihd.net
 DOMAIN,steamuserimagesa.akamaihd.net
 
+DOMAIN-SUFFIX,cm.steampowered.com
+
 
 
