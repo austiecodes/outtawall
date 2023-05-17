@@ -478,4 +478,4 @@ DOMAIN-SUFFIX,thetvdb.com
 DOMAIN-SUFFIX,time.com
 
 # MusixMatch
-DOMAIN,audio-ake.spotify.com.edgesuite.net
+DOMAIN-SUFFIX,edgesuite.net
