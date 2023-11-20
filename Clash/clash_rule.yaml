@@ -66,7 +66,7 @@ proxy-groups:
     type: select
     use:
       - 2.com
-  - name: AI-Tools
+  - name: AI
     type: select
     proxies:
       - 1
@@ -345,15 +345,22 @@ rules:
   - 'IP-CIDR,207.45.72.0/22,Netflix,no-resolve'
   - 'IP-CIDR,208.75.76.0/22,Netflix,no-resolve'
 
-# AI-Tools
-  - DOMAIN—SUFFIX,hugginface.co,AI-Tools
-  - DOMAIN-SUFFIX,bing.com,AI-Tools
-  - DOMAIN-SUFFIX,skype.com,AI-Tools
-  - DOMAIN-SUFFIX,chat.openai.com,AI-Tools
-  - DOMAIN-SUFFIX,api.openai.com,AI-Tools
-  - DOMAIN-SUFFIX,openai.com,AI-Tools
-  - DOMAIN-SUFFIX,deepmind.com,AI-Tools
-  - DOMAIN-SUFFIX,anthropic.com,AI-Tools
+# AI
+  - DOMAIN—SUFFIX,hugginface.co,AI
+  - DOMAIN-SUFFIX,bing.com,AI
+  - DOMAIN-SUFFIX,skype.com,AI
+  - DOMAIN-SUFFIX,deepmind.com,AI
+  - DOMAIN-SUFFIX,anthropic.com,AI
+  - DOMAIN-SUFFIX,api.openai.comAI
+  - DOMAIN-SUFFIX,chat.openai.comAI
+  - DOMAIN-SUFFIX,openai.comAI
+  - DOMAIN-SUFFIX,skype.comAI
+  - DOMAIN-SUFFIX,bing.comAI
+  - DOMAIN-SUFFIX,openai.com.cdn.cloudflare.netAI
+  - DOMAIN-SUFFIX,openai0site.azureedge.netAI
+  - DOMAIN-SUFFIX,openaicom.imgix.netAI
+  - DOMAIN-SUFFIX,oaistatic.comAI
+  - DOMAIN-SUFFIX,oaiusercontent.comAI
 
 
 
