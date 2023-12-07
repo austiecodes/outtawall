@@ -351,20 +351,16 @@ rules:
   - DOMAIN-SUFFIX,skype.com,AI
   - DOMAIN-SUFFIX,deepmind.com,AI
   - DOMAIN-SUFFIX,anthropic.com,AI
-  - DOMAIN-SUFFIX,api.openai.comAI
-  - DOMAIN-SUFFIX,chat.openai.comAI
-  - DOMAIN-SUFFIX,openai.comAI
-  - DOMAIN-SUFFIX,skype.comAI
-  - DOMAIN-SUFFIX,bing.comAI
-  - DOMAIN-SUFFIX,openai.com.cdn.cloudflare.netAI
-  - DOMAIN-SUFFIX,openai0site.azureedge.netAI
-  - DOMAIN-SUFFIX,openaicom.imgix.netAI
-  - DOMAIN-SUFFIX,oaistatic.comAI
-  - DOMAIN-SUFFIX,oaiusercontent.comAI
-
-
-
-
+  - DOMAIN-SUFFIX,api.openai.com,AI
+  - DOMAIN-SUFFIX,chat.openai.com,AI
+  - DOMAIN-SUFFIX,openai.com,AI
+  - DOMAIN-SUFFIX,skype.com,AI
+  - DOMAIN-SUFFIX,bing.com,AI
+  - DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net,AI
+  - DOMAIN-SUFFIX,openai0site.azureedge.net,AI
+  - DOMAIN-SUFFIX,openaicom.imgix.net,AI
+  - DOMAIN-SUFFIX,oaistatic.com,AI
+  - DOMAIN-SUFFIX,oaiusercontent.com,AI
 
 # Discord
   - DOMAIN-SUFFIX,discord.co,Discord

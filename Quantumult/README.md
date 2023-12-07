@@ -80,3 +80,7 @@ Streaming 策略组最初的设想使用方式是独立出来给有观看流媒�
 顺序上来说 Quantumult X 将本地规则放在规则列表的顶部，所以当本地规则存在 `geoip,cn,direct` 时，远程分流文件中对于 CN 地区的 IP 规则并不会生效，解决办法是将相关规则也写在本地或将 `geoip,cn,direct` 放到远程分流文件中。
 
 另外，在 Surge 中如 `DOMAIN,1.1.1.1` 这样的规则可以用于匹配目标主机为 IP 地址 1.1.1.1 的连接，但并不适用于 Quantumult X。
+
+
+## Youtube Conf 
+QX去广告已经失灵，请使用 sgmoudle + QX 资源解析器
