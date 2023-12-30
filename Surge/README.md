@@ -27,7 +27,7 @@ RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Stre
 
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/Netflix.list,SG
 
-RULE-SET,https://github.com/austiecodes/outtawall/blob/main/Surge/PayPal.list,DMIT
+RULE-SET,https://github.com/austiecodes/outtawall/blob/main/Surge/PayPal.list,PayPal
 
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/SteamCommunity.list,SelfHoldFallback
 

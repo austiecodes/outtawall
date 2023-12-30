@@ -400,6 +400,7 @@ DOMAIN-SUFFIX,terabox.com
 DOMAIN-SUFFIX,zaobao.com.sg
 DOMAIN,addons.mozilla.org 
 DOMAIN,wego.here.com
+DOMAIN-SUFFIX,linkedin.com
 
 # > Apple
 DOMAIN,testflight.apple.com
