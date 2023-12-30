@@ -1,10 +1,11 @@
-# 使用 ShadowRocket 过滤 YouTube App 广告
+# 使用 ShadowRocket 配置 并且过滤 YouTube App 广告
 
-1. 首先复制该链接 `https://raw.githubusercontent.com/austiecodes/QXSR/main/ShadowRocket/sr.conf`
+1. 首先复制该链接 `https://raw.githubusercontent.com/austiecodes/QXSR/main/ShadowRocket/abcd.conf`
+   
 2. 打开 ShadowRocket 点击底栏的配置，然后点击添加配置。
   ![1](https://raw.githubusercontent.com/austiecodes/QXSR/main/ShadowRocket/YouTubeAdsConfig/1.jpg)
 
-3. ShadowRocke 会自动识别剪贴板，然后弹出来下面这样子。点击下载。
+1. ShadowRocke 会自动识别剪贴板，然后弹出来下面这样子。点击下载。
 
   ![2](https://raw.githubusercontent.com/austiecodes/QXSR/main/ShadowRocket/YouTubeAdsConfig/2.jpg)
 
@@ -44,4 +45,6 @@
 12. 然后打开名如 Shadowrocket 2022-10-09 文件旁边的开关。完成。
 
       ![11](https://raw.githubusercontent.com/austiecodes/QXSR/main/ShadowRocket/YouTubeAdsConfig/11.jpg)
+
+
 
