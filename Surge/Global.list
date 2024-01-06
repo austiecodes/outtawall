@@ -478,7 +478,8 @@ DOMAIN-SUFFIX,themoviedb.org
 DOMAIN-SUFFIX,thetvdb.com
 DOMAIN-SUFFIX,time.com
 
-# MusixMatch
-DOMAIN-SUFFIX,edgesuite.net
-
+# addition
 DOMAIN-SUFFIX,yankong.org
+DOMAIN-SUFFIX,edgesuite.net
+DOMAIN-SUFFIX,pitchfork.com
+DOMAIN-SUFFIX,plex.com
