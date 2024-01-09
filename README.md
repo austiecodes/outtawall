@@ -1,49 +1,47 @@
-# Mostly Based on Devine Engine
+# outtwall
 
 ## Surge
+- 解决被Google送中的问题:将 `https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt` 这个规则集改为代理. 这个规则集是 google 在中国大陆可以访问的域名集合,将这些域名加入代理可以解决被送中问题,但是因此YouTube会开启非常多的广告,所以需要配合 AdGuard 或者是 uBlock Origin 等插件来使用.
 
-* 解决被Google送中的问题:将 `https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt` 这个规则集改为代理. 这个规则集是 google 在中国大陆可以访问的域名集合,将这些域名加入代理可以解决被送中问题,但是因此YouTube会开启非常多的广告,所以需要配合 AdGuard 或者是 uBlock Origin 等插件来使用.
+- 本仓库中大部分的规则来自于 Devine Engine
+- 使用了 SukkaW 的 ip and non-ip reject
+- 使用了 Loyalsoldier 的 DIRECT 和 Proxy 列表
 
-[Rule]
 
 ```
-
+[Rule]
+# AI and Apple
+RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/AI/AI.list,Default
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Apple.list,DIRECT
-
-RULE-SET,SYSTEM,DIRECT
-
-RULE-SET,LAN,DIRECT
-
-RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/SteamCommunity.list,DIRECT
-
-RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/PrimeVideo.list,PrimeVideo
-
+# Streaming
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/Netflix.list,Netflix
-
-RULE-SET,https://github.com/austiecodes/outtawall/blob/main/Surge/PayPal.list,PayPal
-
-RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Direct.list,Direct
-
+RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/DisneyPlus.list,DisneyPlus
+RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/PrimeVideo.list,PrimeVideo
+RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/Spotify.list,Default
+# Basic Part
+RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Direct.list,DIRECT
+RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt,Default
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Global.list,Default
-
-RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/telegramcidr.txt,Dafault
-
-RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt,Dafault
-
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/reject.txt,REJECT
-
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/private.txt,DIRECT
-
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/direct.txt,DIRECT
-
 RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/cncidr.txt,DIRECT
-
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/proxy.txt,Dafault
-
-FINAL,Dafault
+RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/direct.txt,DIRECT
+RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/telegramcidr.txt,Default
+RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/proxy.txt,Default
+# Non IP Reject
+RULE-SET,https://ruleset.skk.moe/List/non_ip/reject-drop.conf,REJECT-DROP
+DOMAIN-SET,https://ruleset.skk.moe/List/domainset/reject.conf,REJECT-TINYGIF
+RULE-SET,https://ruleset.skk.moe/List/non_ip/reject.conf,REJECT
+# IP Reject
+RULE-SET,https://ruleset.skk.moe/List/ip/reject.conf,REJECT-DROP
+FINAL,Final
 ```
 
 ## Shadowrocket
-
 复制该链接即可 `https://raw.githubusercontent.com/austiecodes/QXSR/main/ShadowRocket/abcd.conf`
+
+## Quantumult
+无特殊情况不再做更新。
+
+## Loon and Stash
+- Stash 可以使用 Clash 的规则
+- Loon 和 Stash 只会根据个人需求根据和上游更新维护 plugins 和 stoverrides
 
