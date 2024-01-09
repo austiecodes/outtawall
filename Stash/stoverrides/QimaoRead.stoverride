@@ -7,7 +7,7 @@ icon: "https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/SevenCa
 
 
 rules:
-    DOMAIN,cdn-new-ad.wtzw.com, REJECT-DICT
+    DOMAIN,cdn-new-ad.wtzw.com, REJECT
     DOMAIN-SUFFIX,gdt.qq.com, REJECT
 
 http:
@@ -19,21 +19,21 @@ http:
         - api-gw.wtzw.com
         - cdn.wtzw.com
     url-rewrite:
-        - ^https:\/\/api-cfg\.wtzw\.com\/v1\/splash\/ - reject-dict
+        - ^https:\/\/api-cfg\.wtzw\.com\/v1\/splash\/ - reject
         - ^https:\/\/xiaoshuo\.wtzw\.com\/app-h5\/freebook\/welfare-center reject
-        - ^https:\/\/api-bc\.wtzw\.com\/api\/v4\/search\/dispose - reject-dict
-        - ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v2\/init\/other-data - reject-dict
-        - ^https:\/\/api-bc\.wtzw\.com\/api\/v1\/book-store\/config - reject-dict
-        - ^https:\/\/api-bc\.wtzw\.com\/api\/v1\/book-store\/push-book - reject-dict
-        - ^https:\/\/api-bc\.wtzw\.com\/api\/v1\/operation - reject-dict
+        - ^https:\/\/api-bc\.wtzw\.com\/api\/v4\/search\/dispose - reject
+        - ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v2\/init\/other-data - reject
+        - ^https:\/\/api-bc\.wtzw\.com\/api\/v1\/book-store\/config - reject
+        - ^https:\/\/api-bc\.wtzw\.com\/api\/v1\/book-store\/push-book - reject
+        - ^https:\/\/api-bc\.wtzw\.com\/api\/v1\/operation - reject
         - ^https:\/\/sf3-fe-tos\.pglstatp-toutiao\.com\/obj\/ad-pattern\/ - reject
-        - ^https:\/\/api-gw\.wtzw\.com\/welf\/app\/v1\/task\/red-packet - reject-dict
+        - ^https:\/\/api-gw\.wtzw\.com\/welf\/app\/v1\/task\/red-packet - reject
         - ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v1\/user\/red-point - reject
         - ^https:\/\/api-cfg\.wtzw\.com\/v1\/reward\/ - reject
         - ^https:\/\/api-cfg\.wtzw\.com\/v1\/adv\/ - reject
-        - ^https:\/\/api-cfg\.wtzw\.com\/v1\/offline-adv\/index - reject-dict
-        - ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v1\/withdraw\/init - reject-dict
-        - ^https:\/\/api-cfg\.wtzw\.com\/v1\/operation\/index\?ad_personal_switch - reject-dict
+        - ^https:\/\/api-cfg\.wtzw\.com\/v1\/offline-adv\/index - reject
+        - ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v1\/withdraw\/init - reject
+        - ^https:\/\/api-cfg\.wtzw\.com\/v1\/operation\/index\?ad_personal_switch - reject
     script:
         - match: ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v3\/user\/my-center
           name: my-center
