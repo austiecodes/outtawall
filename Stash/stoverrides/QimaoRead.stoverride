@@ -19,7 +19,7 @@ http:
         - "cdn.wtzw.com"
     url-rewrite:
         - ^https:\/\/api-cfg\.wtzw\.com\/v1\/splash\/ - reject
-        - ^https:\/\/xiaoshuo\.wtzw\.com\/app-h5\/freebook\/welfare-center reject
+        - ^https:\/\/xiaoshuo\.wtzw\.com\/app-h5\/freebook\/welfare-center - reject
         - ^https:\/\/api-bc\.wtzw\.com\/api\/v4\/search\/dispose - reject
         - ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v2\/init\/other-data - reject
         - ^https:\/\/api-bc\.wtzw\.com\/api\/v1\/book-store\/config - reject
