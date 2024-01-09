@@ -37,7 +37,7 @@ http:
         - match: ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v3\/user\/my-center
           name: my-center
           type: response
-          require-body = true
+          require-body: true
 
 script-providers:
     my-center:
