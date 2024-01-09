@@ -12,12 +12,12 @@ rules:
 
 http:
     mitm:
-        - api-cfg.wtzw.com
-        - xiaoshuo.wtzw.com
-        - sf3-fe-tos.pglstatp-toutiao.com
-        - api-bc.wtzw.com
-        - api-gw.wtzw.com
-        - cdn.wtzw.com
+        - "api-cfg.wtzw.com"
+        - "xiaoshuo.wtzw.com"
+        - "sf3-fe-tos.pglstatp-toutiao.com"
+        - "api-bc.wtzw.com"
+        - "api-gw.wtzw.com"
+        - "cdn.wtzw.com"
     url-rewrite:
         - ^https:\/\/api-cfg\.wtzw\.com\/v1\/splash\/ - reject
         - ^https:\/\/xiaoshuo\.wtzw\.com\/app-h5\/freebook\/welfare-center reject
