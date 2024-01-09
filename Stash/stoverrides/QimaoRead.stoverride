@@ -1,7 +1,6 @@
 name: "七猫小说去广告"
 desc: "过滤七猫小说广告，需要IPA签名方可使用。App Store用户请勿使用此插件，务必点击下方链接查看详细教程。"
 openUrl: "https://getupnote.com/share/notes/zSn1ShBmzNYISKcTgjXE5oHMrNf2/34bf3aad-7872-497d-b239-198e27e8c84c"
-author: "可莉🅥 RuCu6"
 homepage: "https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin"
 icon: "https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/SevenCat.png"
 
@@ -10,7 +9,7 @@ rules:
     - DOMAIN,cdn-new-ad.wtzw.com, REJECT
     - DOMAIN-SUFFIX,gdt.qq.com, REJECT
 
-http:
+http:    
     mitm:
         - "api-cfg.wtzw.com"
         - "xiaoshuo.wtzw.com"
@@ -39,8 +38,6 @@ http:
           name: my-center
           type: response
           require-body = true
-          argument: ''
-          max-size: 1048576
 
 script-providers:
     my-center:
