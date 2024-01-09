@@ -7,8 +7,8 @@ icon: "https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/SevenCa
 
 
 rules:
-    DOMAIN,cdn-new-ad.wtzw.com, REJECT
-    DOMAIN-SUFFIX,gdt.qq.com, REJECT
+    - DOMAIN,cdn-new-ad.wtzw.com, REJECT
+    - DOMAIN-SUFFIX,gdt.qq.com, REJECT
 
 http:
     mitm:
