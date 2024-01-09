@@ -1,11 +1,11 @@
-#!name: Netflix评分
-#!desc: Netflix视频加入豆瓣、imdb评分
+#!name = Netflix评分
+#!desc = Netflix视频加入豆瓣、imdb评分
 
 
 [Script]
 http-response ^https?://ios(-.*)?\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path = https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body = true, tag = NF响应
 
-http-request nf_rating.js ^https?://ios(-.*)?\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D  script-path = https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body = false, tag = NF请求
+http-request ^https?://ios(-.*)?\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D  script-path = https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body = false, tag = NF请求
 
 [Mitm]
 hostname = ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com
