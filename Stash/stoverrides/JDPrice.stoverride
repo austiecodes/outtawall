@@ -6,13 +6,13 @@ icon: "https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/JD.png"
 http:
     script:
         - match: ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item)
-          name: jd-price
+          name: jdprice
           type: response
           require-body: true
     mitm:
         - "api.m.jd.com"
 
 script-providers:
-    jd-price:
+    jdprice:
         - url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/JD/JD_Price.js
         - interval: 86400
