@@ -8,7 +8,8 @@ http:
     url-rewrite:
         - ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-200
     mitm:
-        - "*.googlevideo.com, youtubei.googleapis.com"
+        - "*.googlevideo.com"
+        - "youtubei.googleapis.com"
     script:
         - match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)
           name: yt-request
