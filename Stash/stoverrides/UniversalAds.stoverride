@@ -53,9 +53,31 @@ rules:
         - IP-CIDR, 117.92.229.188/32, REJECT, no-resolve
         - IP-CIDR, 101.36.166.16/32, REJECT, no-resolve
         - IP-CIDR, 180.96.2.114/32, REJECT, no-resolve
+        - DOMAIN, adstats.tencentmusic.com, REJECT-DROP
+        - DOMAIN, ad.tencentmusic.com, REJECT-DROP
+        - DOMAIN, adcdn.tencentmusic.com, REJECT
+        - DOMAIN, adcdn6.tencentmusic.com, REJECT
+        - DOMAIN, adexpo.tencentmusic.com, REJECT
+        - DOMAIN, adclick.tencentmusic.com, REJECT
+        - DOMAIN, otheve.beacon.qq.com, REJECT-DROP
+        - DOMAIN, mazu.m.qq.com, REJECT-DROP
+        - DOMAIN, monitor.music.qq.com, REJECT-DROP
+        - DOMAIN, stat.y.qq.com, REJECT
+        - DOMAIN, tmead.y.qq.com, REJECT-NO-DROP
+        - DOMAIN, oth.str.mdt.qq.com, REJECT
+        - DOMAIN, h.trace.qq.com, REJECT
+        - DOMAIN, sdk.e.qq.com, REJECT
+        - DOMAIN, p.l.qq.com, REJECT
+        - DOMAIN, us.l.qq.com, REJECT
+        - DOMAIN, tangram.e.qq.com, REJECT
+        - DOMAIN-SUFFIX, imtmp.net, REJECT
+
+
 http:
     url-rewrite:
+        # jd
         - ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) - reject-dict
+        # netease music
         - ^https?:\/\/interface3?\.music\.163.com\/e?api\/(ocpc\/)?ad\/.* - reject-dict
         - ^https?:\/\/interface3?\.music\.163.com\/eapi\/search\/(chart\/(detail|list)|default\/keyword\/list|rcmd\/keyword\/get\/v2|specialkeyword\/get) - reject-dict
         - https:\/\/interface3?\.music\.163\.com\/eapi\/(link\/position\/show\/strategy|link\/scene\/show\/resource|music\/songshare\/text\/recommend\/get) - reject-dict
@@ -75,6 +97,7 @@ http:
         - https:\/\/interface3?\.music\.163\.com\/weapi\/(activity\/bonus\/playpage\/time\/query|middle\/clientcfg\/config\/list) - reject-dict
         - https:\/\/interface3?\.music\.163\.com\/w?eapi\/resource-exposure\/(activity\/config\/get|config) - reject-dict
         - https:\/\/interface3?\.music\.163\.com\/eapi\/sp\/flow\/popup\/query - reject-dict   
+        # taobao
         - https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject-dict
         - https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject-dict
         - https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit - reject-dict
@@ -86,8 +109,10 @@ http:
         - https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources - reject-dict
         - https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad - reject-dict
         - https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) - reject-dict
+        # weibo intl
         - https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) - reject-dict
         - https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=hot_search_users - reject-dict
+        # fanqie 
         - https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/(get_ads|stats|settings)\/ - reject
         - https?:\/\/.+\.pglstatp-toutiao\.com\/.+\/toutiao\.mp4 - reject
         - https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/(ad-app-package|ad)\/.+ - reject
@@ -102,6 +127,11 @@ http:
         - http:\/\/.+\.byteimg\.com\/ad-app-package - reject
         - http:\/\/.+\.byteimg\.com\/web\.business\.image - reject
         - https?:\/\/.+?\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ - reject
+        # xiao hong shu
+        - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(get_style|open|submit_action) - reject-dict
+        - ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject-dict
+        - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? - reject-dict
+        - ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) - reject-dict
     mitm:
         - "api.m.jd.com"
         - "interface*.music.163.com"
@@ -120,6 +150,8 @@ http:
         - "gurd.snssdk.com"
         - "gurd.snssdk.com.*"
         - "*default.ixigua.com"
+        - "edith.xiaohongshu.com"
+        - "www.xiaohongshu.com"
     script:
         - match: ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) 
           name: jd
@@ -145,6 +177,16 @@ http:
           name: weibointl
           type: response
           require-body: true
+        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\? 
+          name: xhs
+          type: response
+          require-body: true
+        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config 
+          name: xhs
+          type: response
+          require-body: true
+
+
 script-providers:
     jd:
         url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/JD/JD_remove_ads.js
@@ -154,5 +196,8 @@ script-providers:
         interval: 86400
     weibointl:
         url: https://gitlab.com/lodepuly/vpn_tool/raw/master/Resource/Script/Weibo_intl/Weibo_intl_remove_ads.js
+        interval: 86400
+    xhs:
+        url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/RedPaper/RedPaper_remove_ads.js
         interval: 86400
 
