@@ -1,0 +1,18 @@
+name: "京东比价"
+desc: "在京东应用内嵌入比价信息，点击商品标题即可查看。仅支持京东的标准模式。"
+homepage: "https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin"
+icon: "https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/JD.png"
+
+http:
+    script:
+        - match: ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item)
+          name: jd-price
+          type: response
+          require-body: true
+    mitm:
+        - "api.m.jd.com"
+
+script-providers:
+    jd-price:
+        - url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/JD/JD_Price.js
+        - interval: 86400
