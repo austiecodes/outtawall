@@ -57,9 +57,6 @@ IP-CIDR, 117.92.229.188/32, REJECT, no-resolve
 IP-CIDR, 101.36.166.16/32, REJECT, no-resolve
 IP-CIDR, 180.96.2.114/32, REJECT, no-resolve
 
-
-
-
 [Rewrite]
 # jd
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) reject-dict
@@ -144,7 +141,6 @@ http-response ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(ct=(feed&a=tr
 http-response ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/.*timeline script-path = https://gitlab.com/lodepuly/vpn_tool/raw/master/Resource/Script/Weibo_intl/Weibo_intl_remove_ads.js, requires-body = true, tag = 微博轻享版去广告
 
 http-response ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php script-path = https://gitlab.com/lodepuly/vpn_tool/raw/master/Resource/Script/Weibo_intl/Weibo_intl_remove_ads.js, requires-body = true, tag = 微博轻享版去广告
-
 
 
 [Mitm]

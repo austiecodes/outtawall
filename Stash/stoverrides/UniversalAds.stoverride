@@ -72,7 +72,6 @@ rules:
         - DOMAIN, tangram.e.qq.com, REJECT
         - DOMAIN-SUFFIX, imtmp.net, REJECT
 
-
 http:
     url-rewrite:
         # jd
@@ -132,6 +131,11 @@ http:
         - ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject-dict
         - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? - reject-dict
         - ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) - reject-dict
+        # pingduoduo
+        - ^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
+        # xianyu
+        - ^https:\/\/iyes\.youku\.com\/uts\/v1\/start\/ - reject-dict
+
     mitm:
         - "api.m.jd.com"
         - "interface*.music.163.com"
@@ -152,6 +156,7 @@ http:
         - "*default.ixigua.com"
         - "edith.xiaohongshu.com"
         - "www.xiaohongshu.com"
+
     script:
         - match: ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) 
           name: jd
@@ -186,7 +191,6 @@ http:
           type: response
           require-body: true
 
-
 script-providers:
     jd:
         url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/JD/JD_remove_ads.js
@@ -200,4 +204,3 @@ script-providers:
     xhs:
         url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/RedPaper/RedPaper_remove_ads.js
         interval: 86400
-
