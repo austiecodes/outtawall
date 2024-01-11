@@ -59,33 +59,30 @@ http:
         - ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) - reject-dict
         - ^https?:\/\/interface3?\.music\.163.com\/e?api\/(ocpc\/)?ad\/.* - reject-dict
         ^https?:\/\/interface3?\.music\.163.com\/eapi\/search\/(chart\/(detail|list)|default\/keyword\/list|rcmd\/keyword\/get\/v2|specialkeyword\/get) - reject-dict
-        # 播放页 - 多余图标、各种小提示、高品质音乐试用弹窗
         - https:\/\/interface3?\.music\.163\.com\/eapi\/(link\/position\/show\/strategy|link\/scene\/show\/resource|music\/songshare\/text\/recommend\/get) - reject-dict
         - https:\/\/interface3?\.music\.163\.com\/eapi\/(mlivestream\/entrance\/playpage\/v7|community\/friends\/fans-group\/artist\/group)\/get - reject-dict
         - https:\/\/interface3?\.music\.163\.com\/eapi\/mlog\/vinyl\/story\/list - reject-dict
         - https:\/\/interface3?\.music\.163\.com\/eapi\/(user\/sub\/artist\/exist|vipcenter\/tspopup\/get) - reject-dict
         - https:\/\/interface3?\.music\.163\.com\/eapi\/zone\/songplay\/entry\/get - reject-dict
         - https?:\/\/interface3?\.music\.163\.com\/eapi\/resniche\/position\/play\/new\/get - reject-dict
-        # 评论页 - 插入广告、回复广告、星评馆
   
         - https?:\/\/interface3?\.music\.163\.com\/eapi\/comment\/(hotcomment\/collect\/fetchmodelinfov2|feed\/inserted\/resources|tips\/v2\/get) - reject-dict
         - https?:\/\/interface3?\.music\.163\.com\/eapi\/(content\/exposure\/vinyl\/comment\/entrance|v1\/content\/exposure\/comment\/banner)\/get - reject-dict
-        # 首页 - 右上角多余图标、会员续费弹窗、侧边栏推广
+
         - https:\/\/interface3?\.music\.163\.com\/eapi\/event\/floating\/layer - reject-dict
         - https:\/\/interface3?\.music\.163\.com\/eapi\/(homepage\/banner\/ad\/get|link\/scene\/show\/resource) - reject-dict
         - https:\/\/interface3?\.music\.163\.com\/eapi\/(music-vip-membership\/client\/vip\/info|vipauth\/app\/auth\/recycle) - reject-dict
-        - https:\/\/interface3?\.music\.163\.com\/eapi\/(side-bar\/mini-program\/music-service\/account|delivery\/batch-deliver) - reject-dict
-        # 我的页面 - 小部件红点
+        - ^https:\/\/interface3?\.music\.163\.com\/eapi\/(side-bar\/mini-program\/music-service\/account|delivery\/batch-deliver) - reject-dict
         - https:\/\/interface3?\.music\.163\.com\/eapi\/mine\/applet\/redpoint - reject-dict
-        # 播客 - 弹出广告
+
         - https:\/\/interface3?\.music\.163\.com\/eapi\/voice\/play\/page\/ad\/info - reject-dict
-        # 歌单页 - 横幅广告
+  
         - https:\/\/interface3?\.music\.163\.com\/weapi\/(activity\/bonus\/playpage\/time\/query|middle\/clientcfg\/config\/list) - reject-dict
         - https:\/\/interface3?\.music\.163\.com\/w?eapi\/resource-exposure\/(activity\/config\/get|config) - reject-dict
-        # 流量卡弹窗
+
         - https:\/\/interface3?\.music\.163\.com\/eapi\/sp\/flow\/popup\/query - reject-dict
 
-        # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+     
         - https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject-dict
         - https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject-dict
         - https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit - reject-dict
@@ -98,11 +95,10 @@ http:
         - https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad - reject-dict
         - https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) - reject-dict
 
-        # weibo intl 热门视频、热推荐
         - https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) - reject-dict
         - https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=hot_search_users - reject-dict
 
-        # 番茄小说去章末广告
+
         - https?:\/\/.+\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/(get_ads|stats|settings)\/ - reject
         - https?:\/\/.+\.pglstatp-toutiao\.com\/.+\/toutiao\.mp4 - reject
         - https?:\/\/.+\.(pglstatp-toutiao|pstatp)\.com\/(obj|img)\/(ad-app-package|ad)\/.+ - reject
