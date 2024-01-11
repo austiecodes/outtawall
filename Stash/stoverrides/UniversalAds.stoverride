@@ -1,7 +1,7 @@
 name: "Universal Ads removal"
 desc: "去除各种App的开屏广告"
 author: "No"
-homepage："https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin"
+homepage: "https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin"
 icon: "https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/JD.png"
 
 rules:
@@ -53,7 +53,6 @@ rules:
         - IP-CIDR, 117.92.229.188/32, REJECT, no-resolve
         - IP-CIDR, 101.36.166.16/32, REJECT, no-resolve
         - IP-CIDR, 180.96.2.114/32, REJECT, no-resolve
-
 http:
     url-rewrite:
         - ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) - reject-dict
@@ -146,7 +145,6 @@ http:
           name: weibointl
           type: response
           require-body: true
-     
 script-providers:
     jd:
         url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/JD/JD_remove_ads.js
