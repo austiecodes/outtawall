@@ -82,6 +82,17 @@ rules:
         - URL-REGEX, ^http:\/\/mobilead\.kuwo\.cn\/EcomResourceServer, REJECT
         - URL-REGEX, ^http:\/\/wapi\.kuwo\.cn\/openapi\/v1\/app\/startup, REJECT
         - URL-REGEX, ^http:\/\/rich\.kuwo\.cn\/AdService, REJECT
+        # 知乎
+        - DOMAIN, appcloud.zhihu.com, REJECT
+        - DOMAIN, appcloud2.in.zhihu.com, REJECT
+        - DOMAIN, crash2.zhihu.com, REJECT
+        - DOMAIN, mqtt.zhihu.com, REJECT
+        - DOMAIN, sugar.zhihu.com, REJECT
+        - DOMAIN, zxid-m.mobileservice.cn, REJECT
+        - IP-CIDR, 103.41.167.237/32, REJECT
+        - IP-CIDR, 118.89.204.198/32, REJECT
+        - IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
+
 
 
 http:
@@ -148,6 +159,12 @@ http:
         # xianyu
         - ^https:\/\/iyes\.youku\.com\/uts\/v1\/start\/ - reject-dict
 
+        - ^https:\/\/api\.zhihu\.com\/commercial_api\/(banners_v3\/app_topstory_banner|launch_v2|real_time_launch_v2) - reject-dict
+        - ^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings - reject-dict
+        - ^https:\/\/api\.zhihu\.com\/(moments\/lastread|drama\/hot-drama-list) - reject-dict
+        - ^https:\/\/api\.zhihu\.com\/root\/window - reject-dict
+
+
     mitm:
         - "api.m.jd.com"
         - "interface*.music.163.com"
@@ -198,9 +215,25 @@ http:
           name: xhs
           type: response
           require-body: true
-        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config 
+        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config\?
           name: xhs
           type: response
+          require-body: true
+        - match: ^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer
+          name: zhihu
+          type: response
+          require-body: true
+        - match: ^https:\/\/api\.zhihu\.com\/(moments_v3|topstory\/hot-lists\/total|topstory\/recommend) 
+          name: zhihu
+          type: response
+          require-body: true
+        - match: ^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\?
+          type: response
+          name: zhihu
+          require-body: true
+        - match: ^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\?
+          type: response
+          name: zhihu
           require-body: true
 
 script-providers:
@@ -216,3 +249,6 @@ script-providers:
     xhs:
         url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/RedPaper/RedPaper_remove_ads.js
         interval: 86400
+    zhihu:
+        url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Zhihu/Zhihu_remove_ads.js
+        inverval: 86400
