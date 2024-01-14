@@ -13,13 +13,36 @@ DOMAIN-SUFFIX,oaiusercontent.com
 
 # deepmind
 DOMAIN-SUFFIX,deepmind.com
-
+-
 # Anthropic
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 
 # HugginFace
 DOMAIN-SUFFIX,huggingface.co
+
+# Bing AI
+DOMAINSUFFIX,bing.net
+DOMAINSUFFIX,bingads.com
+DOMAINSUFFIX,bingagencyawards.com
+DOMAINSUFFIX,bingapistatistics.com
+DOMAINSUFFIX,bingsandbox.com
+DOMAINSUFFIX,bingvisualsearch.com
+DOMAINSUFFIX,bingworld.com
+DOMAINSUFFIX,bluehatnights.com
+DOMAINSUFFIX,dictate.ms
+DOMAINSUFFIX,ditu.live.com
+DOMAINSUFFIX,flipwithsurface.com
+DOMAINSUFFIX,masalladeloslimites.com
+DOMAINSUFFIX,microsoftgive.com
+DOMAINSUFFIX,microsoftcloudsummit.com
+DOMAINSUFFIX,microsoftdiplomados.com
+DOMAINSUFFIX,microsoftlatamholiday.com
+DOMAINSUFFIX,microsoftmxfilantropia.com
+DOMAINSUFFIX,microsoftpartnersolutions.com
+DOMAINSUFFIX,msunlimitedcloudsummit.com
+DOMAINSUFFIX,renovacionoffice.com
+DOMAINSUFFIX,sprinklesapp.com
 
 # google
 DOMAIN-SUFFIX,abc.xyz
