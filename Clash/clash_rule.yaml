@@ -229,10 +229,40 @@ rule-providers:
     interval: 86400
 
 rules:
-# Adjust
-  - DOMAIN-SUFFIX,yahoo.com,Proxy
-  - DOMAIN—SUFFIX,engaget.com,Proxy
-  
+  - DOMAIN-SUFFIX,bing.com,AI
+  - DOMAIN-SUFFIX,bing.com.cn,AI
+  - DOMAIN-SUFFIX,bing.net,AI
+  - DOMAIN-SUFFIX,bingads.com,AI
+  - DOMAIN-SUFFIX,bingagencyawards.com,AI
+  - DOMAIN-SUFFIX,bingapistatistics.com,AI
+  - DOMAIN-SUFFIX,bingsandbox.com,AI
+  - DOMAIN-SUFFIX,bingvisualsearch.com,AI
+  - DOMAIN-SUFFIX,bingworld.com,AI
+  - DOMAIN-SUFFIX,bluehatnights.com,AI
+  - DOMAIN-SUFFIX,dictate.ms,AI
+  - DOMAIN-SUFFIX,ditu.live.com,AI
+  - DOMAIN-SUFFIX,flipwithsurface.com,AI
+  - DOMAIN-SUFFIX,masalladeloslimites.com,AI
+  - DOMAIN-SUFFIX,microsoft-give.com,AI
+  - DOMAIN-SUFFIX,microsoftcloudsummit.com,AI
+  - DOMAIN-SUFFIX,microsoftdiplomados.com,AI
+  - DOMAIN-SUFFIX,microsoftlatamholiday.com,AI
+  - DOMAIN-SUFFIX,microsoftmxfilantropia.com,AI
+  - DOMAIN-SUFFIX,microsoftpartnersolutions.com,AI
+  - DOMAIN-SUFFIX,msunlimitedcloudsummit.com,AI
+  - DOMAIN-SUFFIX,renovacionoffice.com,AI
+  - DOMAIN-SUFFIX,sprinklesapp.com,AI
+  - DOMAIN-SUFFIX,ai.com,AI
+  - DOMAIN-SUFFIX,openai.com,AI
+  - DOMAIN-SUFFIX,chat.openai.com,AI
+  - DOMAIN-SUFFIX,api.openai.com,AI
+  - DOMAIN-SUFFIX,oaistatic.com,AI
+  - DOMAIN-SUFFIX,oaiusercontent.com,AI
+  - DOMAIN-SUFFIX,openai.com.fastly.cloudflare.net,AI
+  - DOMAIN-SUFFIX,openai0site.azureedge.net,AI
+  - DOMAIN-SUFFIX,openaicom.imgix.net,AI
+  - DOMAIN-SUFFIX,anthropic.com,AI
+  - DOMAIN-SUFFIX,claude.anthropic.com,AI
 # Steam and it's China CDN
   - DOMAIN-SUFFIX,steamcontent.com,DIRECT
   - DOMAIN-SUFFIX,steamchina.com,DIRECT
