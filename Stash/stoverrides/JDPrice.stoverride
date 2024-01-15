@@ -10,7 +10,7 @@ http:
       type: response
       require-body: true
       timeout: 10
-      
+
 script-providers:
   JD_Price:
     url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/JD/JD_Price.js
