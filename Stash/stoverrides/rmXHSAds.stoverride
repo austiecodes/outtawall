@@ -3,66 +3,57 @@ desc: "过滤信息流推广，移除图片及视频水印，如有异常，请�
 
 
 http:
-    url-rewrite:
-    # 惊喜弹窗
-        - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(get_style|open|submit_action) - reject-dict
-        - ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject-dict
-
-    # 信息流
-        - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? - reject-dict
-        - ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) - reject-dict
-    mitm:
-        - "edith.xiaohongshu.com"
-        - "www.xiaohongshu.com"
-    script:
-        # 详情页小部件、关注页感兴趣的人
-        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(note\/widgets|user\/followings\/followfeed) 
-          name: xhs
-          type: response
-          require-body: true
-        # 搜索页
-        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(banner|hot)_list 
-          name: xhs
-          type: response
-          require-body: true
-        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\?
-          name: xhs
-          type: response
-          require-body: true
-        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\? 
-          name: xhs
-          type: response
-          require-body: true
-        #  开屏广告
-        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?
-          name: xhs
-          type: response
-          require-body: true
-        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config 
-          name: xhs
-          type: response
-          require-body: true
-        # 信息流、详情页感兴趣的人
-        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\? 
-          name: xhs
-          type: response
-          require-body: true
-        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\? 
-          name: xhs
-          type: response
-          require-body: true  
-        # 移除图片和视频水印     
-        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\? 
-          name: xhs
-          type: response
-          require-body: true   
-        # 移除图片和实况照片水印
-        - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(imagefeed|live_photo\/save) 
-          name: xhs
-          type: response
-          require-body: true  
+  url-rewrite:
+    - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(get_style|open|submit_action) - reject-dict
+    - ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject-dict
+    - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? - reject-dict
+    - ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) - reject-dict
+  mitm:
+    - "edith.xiaohongshu.com"
+    - "www.xiaohongshu.com"
+  script:
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(note\/widgets|user\/followings\/followfeed) 
+      name: xhs
+      type: response
+      require-body: true
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(banner|hot)_list 
+      name: xhs
+      type: response
+      require-body: true
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\?
+      name: xhs
+      type: response
+      require-body: true
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\? 
+      name: xhs
+      type: response
+      require-body: true
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?
+      name: xhs
+      type: response
+      require-body: true
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config 
+      name: xhs
+      type: response
+      require-body: true
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\? 
+      name: xhs
+      type: response
+      require-body: true
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\? 
+      name: xhs
+      type: response
+      require-body: true      
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\? 
+      name: xhs
+      type: response
+      require-body: true   
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(imagefeed|live_photo\/save) 
+      name: xhs
+      type: response
+      require-body: true  
 script-providers:
-    xhs:
-        url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/RedPaper/RedPaper_remove_ads.js
-        interval: 86400
+  xhs:
+    url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/RedPaper/RedPaper_remove_ads.js
+    interval: 86400
 
