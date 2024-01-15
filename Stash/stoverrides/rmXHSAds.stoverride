@@ -62,7 +62,7 @@ http:
           type: response
           require-body: true  
 script-providers:
-    - xhs:
+    xhs:
         url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/RedPaper/RedPaper_remove_ads.js
         interval: 86400
 
