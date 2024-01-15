@@ -1,0 +1,34 @@
+name: "微博轻享版去广告"
+desc: "过滤轻享国际版广告及去除各部分推广模块"
+
+
+http:
+    url-rewrite:
+        - ^https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) - reject-dict
+        - ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=hot_search_users - reject-dict
+    
+    mitm:
+        - "*api.weibo.cn"
+        - "sdkapp.uve.weibo.com"
+
+    script:
+        - match: ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(ct=(feed&a=trends|user&a=get_searching_info)|a=(get_coopen_ads|user_center|search_topic|open_app&auth|icon_center))
+          name: weibointl
+          type: response
+          require-body: true
+
+        - match: ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/.*timeline
+          name: weibointl
+          type: response
+          require-body: true
+
+        - match: ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php
+          name: weibointl
+          type: response
+          require-body: true
+          
+script-providers:
+    weibointl:
+        url: https://gitlab.com/lodepuly/vpn_tool/raw/master/Resource/Script/Weibo_intl/Weibo_intl_remove_ads.js
+        interval: 86400
+
