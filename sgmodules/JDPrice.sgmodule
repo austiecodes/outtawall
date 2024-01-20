@@ -1,9 +1,10 @@
-!#name: “京东 App 历史价格查询”
-!#desc: “京东手机 App 历史价格查看”
+#!name=京东比价
+#!desc=京东历史价格
 #!system=ios
 
 [Script]
-http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) requires-body=1,script-path= https://raw.githubusercontent.com/austiecodes/outtawall/main/js/JDPrice.js
+
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) requires-body=1,script-path= https://raw.githubusercontent.com/austiecodes/outtawall/js/JDPrice.js
 
 [MITM]
-hostname = %APPEND%, api.m.jd.com
+hostname = %APPEND% api.m.jd.com
