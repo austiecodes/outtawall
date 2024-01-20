@@ -1,0 +1,379 @@
+mixed-port: 7890
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+mixin:
+  dns:
+    enable: true
+    listen: :53
+    nameserver:
+      - 223.5.5.5
+      - 119.29.29.29
+proxies:
+  - name: US-1
+  - name: US-2 
+  - name: HK-1
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies:
+      - Self-Hold
+      - Self-Hold-Fallback
+      - Airport 1
+  - name: AI
+    type: select
+    proxies:
+      - US-1
+      - US-2
+      - HK-1
+  - name: Steam
+    type: select
+    proxies:
+      - Self-Hold
+      - Airport 1
+      - DIRECT
+  - name: YouTube
+    type: select
+    proxies:
+      - Self-Hold
+      - Airport 1
+  - name: Netflix
+    type: select
+    proxies:
+      - Self-Hold
+      - Airport 1
+  - name: Apple
+    type: select
+    proxies:
+      - Self-Hold
+      - DIRECT
+  # - name: Microsoft
+  #   type: select
+  #   proxies:
+  #     - Proxy
+  #     - DIRECT
+  - name: Self-Hold
+    type: select
+    proxies:
+      - US-1
+      - US-2
+      - HK-1
+  - name: Self-Hold-Fallback
+    type: fallback
+    proxies:
+      - US-1
+      - US-2
+      - HK-1
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: Airport 1
+    type: select
+    use:
+      - sub.paasmi.com
+
+  - name: Others
+    type: select
+    proxies:
+      - DIRECT
+      - Proxy
+proxy-providers:
+  sub.airport.com:
+    type: http
+    url: 
+    interval: 43200
+    path: ./sub.airport.com.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+rule-providers:
+  google_cn:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt"
+    path: ./ruleset/google.yaml
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt
+    path: ./ruleset/proxy.yaml
+    interval: 172800
+  direct:
+    type: http
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt
+    path: ./ruleset/direct.yaml
+    interval: 172800
+  private:
+    type: http
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
+    path: ./ruleset/private.yaml
+    interval: 172800
+  gfw:
+    type: http
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt
+    path: ./ruleset/gfw.yaml
+    interval: 172800
+  greatfire:
+    type: http
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/greatfire.txt
+    path: ./ruleset/greatfire.yaml
+    interval: 172800
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt
+    path: ./ruleset/cncidr.yaml
+    interval: 172800
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt
+    path: ./ruleset/lancidr.yaml
+    interval: 172800
+  applications:
+    type: http
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
+    path: ./ruleset/applications.yaml
+    interval: 172800
+  reject_non_ip_drop:
+    type: http
+    behavior: classical
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/non_ip/reject-drop.txt
+    path: ./sukkaw_ruleset/reject_non_ip_drop.txt
+  reject_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/non_ip/reject.txt
+    path: ./sukkaw_ruleset/reject_non_ip.txt
+  # WARNING! Using reject_domainset can cause Clash out of memory due to the insufficient Clash implementation.
+  # reject_domainset:
+  #   type: http
+  #   behavior: domain
+  #   format: text
+  #   interval: 172800
+  #   url: https://ruleset.skk.moe/Clash/domainset/reject.txt
+  #   path: ./sukkaw_ruleset/reject_domainset.txt
+  reject_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/ip/reject.txt
+    path: ./sukkaw_ruleset/reject_ip.txt
+  sogouinput:
+    type: http
+    behavior: classical
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/non_ip/sogouinput.txt
+    path: ./sukkaw_ruleset/sogouinput.txt
+  stream_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/non_ip/stream.txt
+    path: ./sukkaw_ruleset/stream_non_ip.txt
+  stream_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/ip/stream.txt
+    path: ./sukkaw_ruleset/stream_ip.txt
+  telegram_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/non_ip/telegram.txt
+    path: ./sukkaw_ruleset/telegram_non_ip.txt
+  telegram_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/ip/telegram.txt
+    path: ./sukkaw_ruleset/telegram_ip.txt
+  apple_cdn:
+    type: http
+    behavior: domain
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/domainset/apple_cdn.txt
+    path: ./sukkaw_ruleset/apple_cdn.txt
+  apple_services:
+    type: http
+    behavior: classical
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/non_ip/apple_services.txt
+    path: ./sukkaw_ruleset/apple_services.txt
+  microsoft_cdn_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/non_ip/microsoft_cdn.txt
+    path: ./sukkaw_ruleset/microsoft_cdn_non_ip.txt
+  microsoft_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 172800
+    url: https://ruleset.skk.moe/Clash/non_ip/microsoft.txt
+    path: ./sukkaw_ruleset/microsoft_non_ip.txt
+
+rules:
+  # AI
+  - DOMAIN-SUFFIX,bing.com,AI
+  - DOMAIN-SUFFIX,bing.com.cn,AI
+  - DOMAIN-SUFFIX,bing.net,AI
+  - DOMAIN-SUFFIX,bingads.com,AI
+  - DOMAIN-SUFFIX,bingagencyawards.com,AI
+  - DOMAIN-SUFFIX,bingapistatistics.com,AI
+  - DOMAIN-SUFFIX,bingsandbox.com,AI
+  - DOMAIN-SUFFIX,bingvisualsearch.com,AI
+  - DOMAIN-SUFFIX,bingworld.com,AI
+  - DOMAIN-SUFFIX,bluehatnights.com,AI
+  - DOMAIN-SUFFIX,dictate.ms,AI
+  - DOMAIN-SUFFIX,ditu.live.com,AI
+  - DOMAIN-SUFFIX,flipwithsurface.com,AI
+  - DOMAIN-SUFFIX,masalladeloslimites.com,AI
+  - DOMAIN-SUFFIX,microsoft-give.com,AI
+  - DOMAIN-SUFFIX,microsoftcloudsummit.com,AI
+  - DOMAIN-SUFFIX,microsoftdiplomados.com,AI
+  - DOMAIN-SUFFIX,microsoftlatamholiday.com,AI
+  - DOMAIN-SUFFIX,microsoftmxfilantropia.com,AI
+  - DOMAIN-SUFFIX,microsoftpartnersolutions.com,AI
+  - DOMAIN-SUFFIX,msunlimitedcloudsummit.com,AI
+  - DOMAIN-SUFFIX,renovacionoffice.com,AI
+  - DOMAIN-SUFFIX,sprinklesapp.com,AI
+  - DOMAIN-SUFFIX,ai.com,AI
+  - DOMAIN-SUFFIX,openai.com,AI
+  - DOMAIN-SUFFIX,chat.openai.com,AI
+  - DOMAIN-SUFFIX,api.openai.com,AI
+  - DOMAIN-SUFFIX,oaistatic.com,AI
+  - DOMAIN-SUFFIX,oaiusercontent.com,AI
+  - DOMAIN-SUFFIX,openai.com.fastly.cloudflare.net,AI
+  - DOMAIN-SUFFIX,openai0site.azureedge.net,AI
+  - DOMAIN-SUFFIX,openaicom.imgix.net,AI
+  - DOMAIN-SUFFIX,anthropic.com,AI
+  - DOMAIN-SUFFIX,claude.anthropic.com,AI
+  # Steam China mainland CDN
+  - DOMAIN,xz.pphimalayanrt.com,DIRECT
+  - DOMAIN-SUFFIX,cm.steampowered.com,DIRECT
+  - DOMAIN-SUFFIX,steamserver.net,DIRECT
+  # - DOMAIN-SUFFIX,steamusercontent.com
+  - DOMAIN-SUFFIX,steamcontent.com,DIRECT
+  - DOMAIN-SUFFIX,steamchina.com,DIRECT
+  - DOMAIN,csgo.wmsj.cn,DIRECT
+  - DOMAIN,dota2.wmsj.cn,DIRECT
+  - DOMAIN,wmsjsteam.com,DIRECT
+  - DOMAIN,dl.steam.clngaa.com,DIRECT
+  - DOMAIN,dl.steam.ksyna.com,DIRECT
+  - DOMAIN,st.dl.bscstorage.net,DIRECT
+  - DOMAIN,st.dl.eccdnx.com,DIRECT
+  - DOMAIN,st.dl.pinyuncloud.com,DIRECT
+  - DOMAIN,steampipe.steamcontent.tnkjmec.com,DIRECT
+  - DOMAIN,steampowered.com.8686c.com,DIRECT
+  - DOMAIN,steamstatic.com.8686c.com,DIRECT
+  - DOMAIN,dl.steam.clngaa.com,DIRECT
+  - DOMAIN,dl.steam.ksyna.com,DIRECT
+  - DOMAIN,dl.steam.*,DIRECT
+  # GameDownload
+  - DOMAIN,assets1.xboxlive.cn,DIRECT
+  - DOMAIN,assets2.xboxlive.cn,DIRECT
+  - DOMAIN,cdn-ali.content.steamchina.com,DIRECT
+  - DOMAIN,cdn-qc.content.steamchina.com,DIRECT
+  - DOMAIN,cdn-ws.content.steamchina.com,DIRECT
+  - DOMAIN,dl.delivery.mp.microsoft.com,DIRECT
+  - DOMAIN,dl.steam.clngaa.com,DIRECT
+  - DOMAIN,epicgames-download1-1251447533.file.myqcloud.com,DIRECT
+  - DOMAIN,st.dl.bscstorage.net,DIRECT
+  - DOMAIN,st.dl.eccdnx.com,DIRECT
+  - DOMAIN,steampipe.steamcontent.tnkjmec.com,DIRECT
+  - DOMAIN,tlu.dl.delivery.mp.microsoft.com,DIRECT
+  - DOMAIN,trts.baishancdnx.cn,DIRECT
+  - DOMAIN,uplaypc-s-ubisoft.cdn.ubionline.com.cn,DIRECT
+  - DOMAIN,xz.pphimalayanrt.com,DIRECT
+  - DOMAIN-SUFFIX,pdl.wow.battlenet.com.cn,DIRECT
+  # Steam Service
+  - DOMAIN-SUFFIX,steam-chat.com,Steam
+  - DOMAIN-SUFFIX,community.steamstatic.com,Steam
+  - DOMAIN-SUFFIX,steam-chat.com,Steam
+  - DOMAIN-SUFFIX,steamgames.com,Steam
+  - DOMAIN-SUFFIX,Steam.com,Steam
+  - DOMAIN-SUFFIX,steampowered.com,Steam
+  - DOMAIN-SUFFIX,steamstatic.com,Steam
+  - DOMAIN-SUFFIX,steamusercontent.com,Steam
+  - DOMAIN-SUFFIX,underlords.com,Steam
+  - DOMAIN-SUFFIX,valvesoftware.com,Steam
+  - DOMAIN,steambroadcast.akamaized.net,Steam
+  - DOMAIN,steamcdn-a.akamaihd.net,Steam
+  - DOMAIN,Steam-a.akamaihd.net,Steam
+  - DOMAIN,steamstore-a.akamaihd.net,Steam
+  - DOMAIN,steamusercontent-a.akamaihd.net,Steam
+  - DOMAIN,steamuserimages-a.akamaihd.net,Steam
+  - DOMAIN-SUFFIX,steamserver.net,Steam
+  - DOMAIN,ext3-hkg1.steamserver.net,Steam
+  # YouTube
+  - DOMAIN-SUFFIX,googlevideo.com,YouTube
+  - DOMAIN-SUFFIX,withyoutube.com,YouTube
+  - DOMAIN-SUFFIX,youtu.be,YouTube
+  - DOMAIN-SUFFIX,youtube.com,YouTube
+  - DOMAIN-SUFFIX,youtubeeducation.com,YouTube
+  - DOMAIN-SUFFIX,youtubegaming.com,YouTube
+  - DOMAIN-SUFFIX,youtubekids.com,YouTube
+  - DOMAIN-SUFFIX,youtube-nocookie.com,YouTube
+  - DOMAIN-SUFFIX,yt.be,YouTube
+  - DOMAIN-SUFFIX,ytimg.com,YouTube
+  - DOMAIN,youtubei.googleapis.com,YouTube
+  - DOMAIN,yt3.ggpht.com,YouTube
+  # Reject
+  - RULE-SET,sogouinput,REJECT
+  - RULE-SET,reject_non_ip_drop,REJECT
+  - RULE-SET,reject_non_ip,REJECT
+  # WARNING! Using reject_domainset can cause Clash out of memory due to the insufficient Clash implementation.
+  # - RULE-SET,reject_domainset,REJECT
+  - RULE-SET,google_cn, Proxy
+  - RULE-SET,reject_ip,REJECT
+  # Stream
+  - RULE-SET,stream_non_ip,Netflix
+  - RULE-SET,stream_ip,Netflix
+  # Telegram
+  - RULE-SET,telegram_non_ip,Proxy
+  - RULE-SET,telegram_ip,Proxy
+  # Apple
+  - RULE-SET,apple_cdn,Apple
+  - RULE-SET,apple_services,Apple
+  # Microsoft
+  - RULE-SET,microsoft_cdn_non_ip,DIRECT
+  - RULE-SET,microsoft_non_ip,DIRECT
+  # Basics
+  - RULE-SET,proxy,Proxy
+  - RULE-SET,gfw,Proxy
+  - RULE-SET,greatfire,Proxy
+  # Direct
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - RULE-SET,private,DIRECT
+  - RULE-SET,direct,DIRECT
+  - RULE-SET,lancidr,DIRECT
+  - RULE-SET,cncidr,DIRECT
+  - RULE-SET,applications,DIRECT
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,Others

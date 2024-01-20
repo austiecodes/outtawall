@@ -13,7 +13,7 @@ DOMAIN-SUFFIX,oaiusercontent.com
 
 # deepmind
 DOMAIN-SUFFIX,deepmind.com
--
+
 # Anthropic
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
