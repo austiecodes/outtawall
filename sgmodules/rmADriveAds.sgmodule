@@ -5,7 +5,7 @@
 [Rule]
 IP-CIDR, 203.107.1.1/24, REJECT, no-resolve
 
-[Rewrite]
+[URL Rewrite]
 # 首页活动日历
 # ^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_info reject-dict
 # 首页板块入口
