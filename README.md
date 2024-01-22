@@ -10,32 +10,33 @@
 
 ```
 [Rule]
-# AI and Apple
-RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/AI/AI.list,Default
+RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt,Default
+RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/AI/AI.list,AI
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Apple.list,DIRECT
-# Streaming
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/Netflix.list,Netflix
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/DisneyPlus.list,DisneyPlus
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/PrimeVideo.list,PrimeVideo
-RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/Spotify.list,Default
-# Basic Part
-RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Direct.list,DIRECT
-RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt,Default
-RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Global.list,Default
-RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/cncidr.txt,DIRECT
-RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/direct.txt,DIRECT
-RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/telegramcidr.txt,Default
-RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/proxy.txt,Default
-# Non IP Reject
+# Telegram
+RULE-SET,https://ruleset.skk.moe/List/non_ip/telegram.conf,Default
+RULE-SET,https://ruleset.skk.moe/List/ip/telegram.conf,Default
+RULE-SET,https://ruleset.skk.moe/List/ip/telegram_asn.conf,Default
+# Reject Non IP
 RULE-SET,https://ruleset.skk.moe/List/non_ip/reject-drop.conf,REJECT-DROP
 DOMAIN-SET,https://ruleset.skk.moe/List/domainset/reject.conf,REJECT-TINYGIF
 RULE-SET,https://ruleset.skk.moe/List/non_ip/reject.conf,REJECT
-# IP Reject
+# Reject IP
 RULE-SET,https://ruleset.skk.moe/List/ip/reject.conf,REJECT-DROP
+# Misc
+RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Direct.list,DIRECT
+RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Global.list,Default
+# Basic
+RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/cncidr.txt,DIRECT
+RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/direct.txt,DIRECT
+RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/proxy.txt,Default
 FINAL,Final
 ```
 
 ## Stash
-- 提供基础的 yaml 模板
-- 根据个人使用和上游维护 Stash Overrides
+- 提供基础的 yaml 模板(可用于C lash for Windows 等)
+- 根据个人使用和上游更新维护 Stash Overrides
 
