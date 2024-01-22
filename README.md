@@ -6,9 +6,9 @@ Loon插件可以直接使用[这个](https://gitlab.com/lodepuly/vpn_tool/-/tree
 
 解决被Google送中的问题：将 `https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt` 这个规则集改为代理。这个规则集是 google 在中国大陆可以访问的域名集合,将这些域名加入代理可以解决被送中问题，但是因此 YouTube 会开启非常多的广告，所以需要配合 AdGuard 或者是 uBlock Origin 等插件来使用.
 
-- 本仓库中部分的规则来自于 Devine Engine
-- 使用了 SukkaW 的 ip and non-ip reject
-- 使用了 Loyalsoldier 的 DIRECT 和 Proxy 列表
+- 本仓库中部分的规则来自于 [Devine Engine](https://github.com/DivineEngine/Profiles)
+- 使用了 [SukkaW](https://github.com/SukkaW/Surge) 的部分规则
+- 使用了 [Loyalsoldier](https://github.com/Loyalsoldier/surge-rules) 的部分规则
 
 给出 Surge 配置实例：
 ```
@@ -33,7 +33,6 @@ RULE-SET,https://ruleset.skk.moe/List/ip/reject.conf,REJECT-DROP
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Direct.list,DIRECT
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Global.list,Default
 # Basic
-RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/cncidr.txt,DIRECT
 RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/direct.txt,DIRECT
 RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/proxy.txt,Default
 FINAL,Final
