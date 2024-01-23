@@ -1,10 +1,11 @@
 # outtwall
 QauntumultX 可以通过使用资源解析器来使用 Surge 规则， Loon 原生支持。
-Loon插件可以直接使用[这个](https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin?ref_type=heads)，本仓库的模组大部分也是改写该仓库以适配 Surge 和 Stash。
+Loon插件可以直接使用[这个](https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin?ref_type=heads)，本仓库的模组大部分也是改写自该仓库以适配 Surge 和 Stash。
 
 ## Surge 
 
-解决被Google送中的问题：将 `https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt` 这个规则集改为代理。这个规则集是 google 在中国大陆可以访问的域名集合,将这些域名加入代理可以解决被送中问题，但是因此 YouTube 会开启非常多的广告，所以需要配合 AdGuard 或者是 uBlock Origin 等插件来使用.
+解决被Google送中的问题：
+建议代理 `https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt`。这个规则集是 google 在中国大陆可以访问的域名集合,将这些域名加入代理可以解决被送中问题。
 
 - 本仓库中部分的规则来自于 [Devine Engine](https://github.com/DivineEngine/Profiles)
 - 使用了 [SukkaW](https://github.com/SukkaW/Surge) 的部分规则
@@ -35,6 +36,7 @@ RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Glob
 # Basic
 RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/direct.txt,DIRECT
 RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/proxy.txt,Default
+GEOIP,CN,DIRECT
 FINAL,Final
 ```
 
