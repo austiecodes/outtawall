@@ -14,12 +14,16 @@ Loon插件可以直接使用[这个](https://gitlab.com/lodepuly/vpn_tool/-/tree
 给出 Surge 配置实例：
 ```
 [Rule]
-RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt,Default
+# A
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/AI/AI.list,AI
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Apple.list,DIRECT
+# Streaming
+RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/YouTube.list,YouTube
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/Netflix.list,Netflix
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/DisneyPlus.list,DisneyPlus
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/PrimeVideo.list,PrimeVideo
+# GoogleCN
+RULE-SET,https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt,Default
 # Telegram
 RULE-SET,https://ruleset.skk.moe/List/non_ip/telegram.conf,Default
 RULE-SET,https://ruleset.skk.moe/List/ip/telegram.conf,Default
