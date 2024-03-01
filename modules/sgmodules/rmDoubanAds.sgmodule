@@ -1,0 +1,13 @@
+#!name = 豆瓣去广告
+#!desc = 豆瓣去广告
+
+[URL Rewrite]
+^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash - reject-dict
+^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* - reject-dict
+^https?:\/\/img\d\.doubanio\.com\/view\/dale-online\/dale_ad\/ - reject
+^https?:\/\/frodo.douban.com\/api\/v2\/movie\/banner - reject
+^https?:\/\/erebor\.douban\.com\/count\/\?ad= - reject
+^https?+:\/\/api\.douban\.com\/v\d\/app_ads\/ - reject-200
+
+[MITM]
+hostname = %APPEND% api.douban.com
