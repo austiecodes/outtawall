@@ -1,6 +1,6 @@
 #!name = 豆瓣去广告
 #!desc = 豆瓣去广告
-
+#!category=rmAds
 [URL Rewrite]
 ^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash - reject-dict
 ^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* - reject-dict

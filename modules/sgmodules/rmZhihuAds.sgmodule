@@ -1,6 +1,6 @@
 #!name = 知乎去广告
 #!desc = 去除各部广告，建议卸载知乎重新安装。
-
+#!category=rmAds
 
 [Rule]
 # 知乎
