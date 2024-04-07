@@ -26,7 +26,7 @@ https://cdn.jsdelivr.net/gh/Loyalsoldier/surge-rules@release/ruleset/google.txt
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/AI/AI.list,AI,update-interval=172800
 RULE-SET,https://ruleset.skk.moe/List/non_ip/apple_services.conf,Default
 # Steam
-RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Game.list,DIRECT,update-interval=172800
+RULE-SET, ,DIRECT,update-interval=172800
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/SteamCommunity,Steam,update-interval=172800
 # Streaming
 RULE-SET,https://raw.githubusercontent.com/austiecodes/outtawall/main/Surge/Streaming/YouTube.list,YouTube,update-interval=172800
