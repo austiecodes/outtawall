@@ -3,6 +3,7 @@ desc: "过滤七猫小说广告，需要IPA签名方可使用。App Store用户�
 openUrl: "https://getupnote.com/share/notes/zSn1ShBmzNYISKcTgjXE5oHMrNf2/34bf3aad-7872-497d-b239-198e27e8c84c"
 homepage: "https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin"
 icon: "https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/SevenCat.png"
+category: "去广告“
 
 
 rules:

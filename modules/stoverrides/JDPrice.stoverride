@@ -1,5 +1,7 @@
 name: “京东 App 历史价格查询”
 desc: “京东手机 App 历史价格查看”
+icon: https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/JD.png
+category: "功能性插件"
 
 http:
   mitm:
