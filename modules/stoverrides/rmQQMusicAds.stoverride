@@ -1,7 +1,7 @@
 name: "QQ音乐 App 去广告"
 desc: "过滤QQ音乐广告"
 icon: "https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/QQMusic.png"
-category: "去广告“
+category: "去广告"
 
 
 rules:

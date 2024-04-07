@@ -1,7 +1,7 @@
 name: "淘宝 App 去广告"
 desc: "去掉淘宝的开屏广告和内置广告"
 icon: "https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Taobao.png"
-category: "去广告“
+category: "去广告"
 
 rules:
     - DOMAIN, adashx.m.taobao.com, REJECT
