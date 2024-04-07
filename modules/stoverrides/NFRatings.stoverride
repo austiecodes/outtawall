@@ -1,5 +1,5 @@
-name: “Netflix评分”
-desc: “Netflix视频加入豆瓣、imdb评分”
+name: "Netflix评分"
+desc: "Netflix视频加入豆瓣、imdb评分"
 category: "功能性插件"
 
 http:
