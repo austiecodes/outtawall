@@ -1,5 +1,17 @@
 # > AI
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,meta.ai
+
 # openai
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,api.openai.com
 DOMAIN-SUFFIX,chat.openai.com
 DOMAIN-SUFFIX,openai.com
@@ -48,6 +60,17 @@ DOMAIN-SUFFIX,sprinklesapp.com
 # Google AI
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN-SUFFIX,geller-pa.googleapis.com
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN,ai.google.dev
+DOMAIN,alkalicore-pa.clients6.google.com
+DOMAIN,alkalimakersuite-pa.clients6.google.com
 
 # Others
 DOMAIN-SUFFIX,x.ai
