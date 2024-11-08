@@ -9,6 +9,7 @@ DOMAIN-SUFFIX,meta.ai
 # openai
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,chatgpt.com
